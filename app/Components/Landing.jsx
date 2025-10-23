@@ -59,12 +59,16 @@ export default function AutoScrollPosterWall() {
               }}
             >
               {[...posters, ...posters].map((src, i) => (
-                <img
-                  key={`${idx}-${i}`}
-                  src={src}
-                  alt="poster"
-                  className="w-full rounded-lg md:rounded-2xl mt-3 mb-4 shadow-lg"
-                />
+      <Image
+  key={`${idx}-${i}`}
+  src={src}
+  alt={`poster-${idx}-${i}`}
+  width={300}
+  height={450}
+  className="w-full rounded-lg md:rounded-2xl mt-3 mb-4 shadow-lg object-cover"
+/>
+
+
               ))}
             </div>
           </div>
