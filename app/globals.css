@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* Hide ScrollTrigger markers (keep them active but invisible) */
+.gsap-marker-start,
+.gsap-marker-end,
+.gsap-marker-scroller-start,
+.gsap-marker-scroller-end {
+  opacity: 0 !important;
+  pointer-events: none;
+}
