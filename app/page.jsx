@@ -1,8 +1,12 @@
 'use client'
 
+import BottomSection from "./Components/BottomSection"
+import Cards from "./Components/Cards"
+import ImageSection from "./Components/ImageSection"
 import AutoScrollPosters from "./Components/Landing"
 import Scroll from "./Components/Scroll"
 import Videoo from "./Components/video"
+import Footer from "./Footer/Footer"
 
 export default function Home(){
   return(
@@ -18,21 +22,19 @@ export default function Home(){
         </section>
 
         {/* Section 3 - Scroll animation section */}
-        <section className="h-screen overflow-hidden z-10 relative">
+        <section className="h-full overflow-hidden z-10 relative">
            <Scroll/>
         </section>
 
-        {/* Section 2 - Full viewport height */}
-        <section className="h-screen overflow-hidden z-40  bg-transparent relative">
-        
+         <section className="bg-black h-full overflow-hidden z-30 relative">
+       <ImageSection/>
         </section>
 
          <section className="bg-black h-full overflow-hidden z-30 relative">
-           <AutoScrollPosters/>
+    <BottomSection/>
         </section>
-
-         <section className="bg-black h-full overflow-hidden z-30 relative">
-           <AutoScrollPosters/>
+            <section className="bg-black h-full overflow-hidden z-30 relative">
+     <Footer/>
         </section>
          
      

@@ -7,7 +7,7 @@ export default function AutoScrollPosterWall() {
     [
       "/Images/KLM.jpg",
       "/Images/KNR.jpg",
-       "/Images/KLM.jpg",
+       "/Images/KSG.jpg",
       "/Images/KNR.jpg",
    
     ],
