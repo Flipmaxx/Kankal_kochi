@@ -7,8 +7,8 @@ export default function ImageSection() {
     <section
       className="
         relative w-full overflow-hidden px-4
-        h-[20vh]          /* Default height for mobile */
-        sm:h-[20vh]       /* Small screens */
+        h-[30vh]          /* Default height for mobile */
+        sm:h-[30vh]       /* Small screens */
         md:h-[30vh]       /* Medium screens */
         lg:h-[40vh]       /* Large screens */
         xl:h-[95vh]       /* Extra large screens */

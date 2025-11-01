@@ -2,7 +2,7 @@
 
 export default function BottomSection() {
   return (
-    <section className="w-full h-[20vh] md:h-[40vh] flex flex-col items-center justify-center text-center py-10 bg-black">
+    <section className="w-full h-full md:h-[40vh] flex flex-col items-center justify-center text-center py-10 bg-black">
       <h1 className="text-lg md:text-2xl lg:text-[35px] font-bold text-white">
         LET&apos;S TALK IDEAS AND
       </h1>
