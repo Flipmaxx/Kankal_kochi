@@ -23,7 +23,7 @@ export default function Home(){
 
         {/* Section 3 - Scroll animation section */}
         <section className="h-full overflow-hidden z-10 relative">
-           {/* <Scroll/> */}
+           <Scroll/>
         </section>
 
          <section className="bg-black h-full overflow-hidden z-30 relative">
@@ -34,7 +34,7 @@ export default function Home(){
     <BottomSection/>
         </section>
             <section className="bg-black h-full overflow-hidden z-30 relative">
-     <Footer/>
+     {/* <Footer/> */}
         </section>
          
      

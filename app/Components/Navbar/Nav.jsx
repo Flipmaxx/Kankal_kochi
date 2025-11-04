@@ -12,22 +12,19 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Detect scroll for background change
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Nav links
   const links = [
     { name: 'Home', href: '/' },
     { name: 'About us', href: '/about' },
     { name: 'Works', href: '/works' },
-    { name: 'Contact us', href: '/contact' },
+    { name: 'Contact us', href: '/Contact' },
   ];
 
-  // Motion variants
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,7 +58,6 @@ export default function Nav() {
       }`}
     >
       <div className="flex justify-between items-center px-6 md:px-10 py-4">
-        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/Images/LG2.png"
@@ -72,8 +68,6 @@ export default function Nav() {
             className="w-auto h-12 md:h-14 cursor-pointer"
           />
         </Link>
-
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-[15px]">
           {links.map((link) => (
             <Link
@@ -89,8 +83,6 @@ export default function Nav() {
             </Link>
           ))}
         </div>
-
-        {/* Mobile Menu Icon */}
         <div className="md:hidden">
           {isOpen ? (
             <X
@@ -107,8 +99,6 @@ export default function Nav() {
           )}
         </div>
       </div>
-
-      {/* Fullscreen Animated Mobile Menu */}
       <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
@@ -118,7 +108,6 @@ export default function Nav() {
             exit="exit"
             className="fixed inset-0 bg-black/90 backdrop-blur-2xl flex flex-col items-center justify-center space-y-8 text-center z-40"
           >
-            {/* Close Button Inside Menu */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
@@ -132,7 +121,6 @@ export default function Nav() {
               />
             </motion.div>
 
-            {/* Animated Links */}
             {links.map((link, i) => (
               <motion.div
                 key={link.name}
@@ -155,15 +143,13 @@ export default function Nav() {
                 </Link>
               </motion.div>
             ))}
-
-            {/* Footer Text */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.8 } }}
               exit={{ opacity: 0, y: 10, transition: { duration: 0.2 } }}
               className="pt-10 text-sm text-gray-400"
             >
-              © 2025 Flipmaxx. All Rights Reserved.
+       
             </motion.div>
           </motion.div>
         )}
