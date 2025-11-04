@@ -20,8 +20,8 @@ export default function Nav() {
 
   const links = [
     { name: 'Home', href: '/' },
-    { name: 'About us', href: '/about' },
-    { name: 'Works', href: '/works' },
+    { name: 'About us', href: '/AboutUs' },
+    { name: 'Works', href: '/Works' },
     { name: 'Contact us', href: '/Contact' },
   ];
 

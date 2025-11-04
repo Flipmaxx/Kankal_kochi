@@ -1,85 +1,68 @@
 "use client";
-import Image from "next/image";
+
+import { motion } from "framer-motion";
 
 export default function KochiMedia() {
-  const cards = [
+  const reels = [
     {
       id: 1,
-      img: "/Images/sample1.jpg",
-      authorImg: "/Images/profile1.jpg",
+      embedUrl: "https://www.instagram.com/reel/DQZKxGIkulA/embed",
     },
     {
       id: 2,
-      img: "/Images/sample2.jpg",
-      authorImg: "/Images/profile2.jpg",
-    },
-    {
-      id: 3,
-      img: "/Images/sample3.jpg",
-      authorImg: "/Images/profile3.jpg",
-    },
-    {
-      id: 4,
-      img: "/Images/sample4.jpg",
-      authorImg: "/Images/profile4.jpg",
+      embedUrl: "https://www.instagram.com/reel/DQmDobyEiPg/embed",
     },
   ];
 
   return (
-    <div className="bg-black text-white py-10 px-6 md:px-12 flex justify-center">
-      <div className="border border-[#00b7ff] rounded-md p-6 w-full relative">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+    <section className="relative bg-black text-white py-16 px-6 md:px-12 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/Images/BG3.png')] bg-cover bg-center opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+
+      <div className="relative z-10 container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between md:items-center mb-10">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-2">
               Exclusive from Kankal Kochi Media
             </h2>
-            <p className="text-sm text-gray-300 mt-1 max-w-2xl">
+            <p className="text-sm md:text-base text-gray-300 max-w-2xl">
               Bringing you untold stories, vibrant events, and real voices that define the true spirit of Kochi.
             </p>
           </div>
-          <button className="mt-4 md:mt-0 border border-gray-400 hover:bg-[#00b7ff] hover:text-black transition-all text-sm px-5 py-2 rounded">
+          <button className="mt-6 md:mt-0 border border-gray-400 hover:bg-white hover:text-black transition-all text-sm px-6 py-2 rounded">
             View All
           </button>
         </div>
 
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-black border border-gray-700 rounded-md overflow-hidden hover:scale-[1.02] transition-all duration-300"
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ staggerChildren: 0.15 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          {reels.map((reel) => (
+            <motion.div
+              key={reel.id}
+              className="rounded-xl overflow-hidden shadow-lg bg-black/40 backdrop-blur-sm border border-gray-800 hover:border-[#00b7ff] transition-all"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="relative w-full h-64">
-                <Image
-                  src={card.img || "/Images/placeholder.jpg"}
-                  alt="Kochi"
-                  fill
-                  className="object-cover"
+              <div className="aspect-[11/12] w-full">
+                <iframe
+                  src={reel.embedUrl}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               </div>
-              <div className="p-3">
-                <p className="text-sm text-gray-200">
-                  Lorem Ipsum is simply dummy text of the printing industry.
-                </p>
-                <div className="flex items-center gap-2 mt-3">
-                  <Image
-                    src={card.authorImg || "/Images/userPlaceholder.png"}
-                    width={24}
-                    height={24}
-                    alt="author"
-                    className="rounded-full"
-                  />
-                  <span className="text-xs text-gray-400">Kankal.kochi</span>
-                </div>
-              </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
-        {/* Glow border effect */}
-        <div className="absolute inset-0 border border-[#00b7ff]/40 rounded-md blur-[1px] pointer-events-none" />
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
