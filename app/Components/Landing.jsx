@@ -5,36 +5,37 @@ import Image from "next/image";
 export default function AutoScrollPosterWall() {
   const posterColumns = [
     [
+      "/Images/TVM.jpg",
       "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
-       "/Images/KSG.jpg",
-      "/Images/KNR.jpg",
+       "/Images/PTA.jpg",
+      
    
     ],
     [
-      "/Images/KNR.jpg",
-      "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
-      "/Images/KLM.jpg",
+      "/Images/ALP.jpg",
+      "/Images/KTM.jpg",
+      "/Images/IDK.jpg",
+      
     ],
      [
-      "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
-       "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
+      "/Images/EKM.jpg",
+      "/Images/TSR.jpg",
+       "/Images/PLK.jpg",
+     
    
     ],
  [
-      "/Images/KNR.jpg",
-      "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
-      "/Images/KLM.jpg",
+      "/Images/MLP.jpg",
+      "/Images/KZD.jpg",
+      "/Images/WAD.jpg",
+    
     ],
      [
-      "/Images/KLM.jpg",
       "/Images/KNR.jpg",
-       "/Images/KLM.jpg",
-      "/Images/KNR.jpg",
+      "/Images/KAD.jpg",
+       "/Images/KNR.jpg",
+       "/Images/KAD.jpg",
+      
    
     ],
   ];

@@ -44,7 +44,7 @@ export default function Scroll() {
     const scrollTrigger = ScrollTrigger.create({
       trigger: spacerRef.current,
       start: "top top",
-      end: "+=200%", // Reduced from 400% to 200%
+      end: "+=130%", // Reduced from 400% to 200%
       scrub: 0.5, // Smoother scrubbing
       pin: containerRef.current,
       anticipatePin: 1,
