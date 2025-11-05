@@ -68,6 +68,8 @@ export default function Nav() {
             className="w-auto h-12 md:h-14 cursor-pointer"
           />
         </Link>
+
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8 text-[15px]">
           {links.map((link) => (
             <Link
@@ -75,7 +77,7 @@ export default function Nav() {
               href={link.href}
               className={`transition ${
                 pathname === link.href
-                  ? 'text-gray-400 hover:text-white'
+                  ? 'text-white'
                   : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -83,6 +85,8 @@ export default function Nav() {
             </Link>
           ))}
         </div>
+
+        {/* Mobile Menu Icon */}
         <div className="md:hidden">
           {isOpen ? (
             <X
@@ -99,6 +103,8 @@ export default function Nav() {
           )}
         </div>
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
@@ -135,7 +141,7 @@ export default function Nav() {
                   onClick={() => setIsOpen(false)}
                   className={`text-3xl font-light tracking-wide transition ${
                     pathname === link.href
-                      ? 'text-purple-400'
+                      ? 'text-white'
                       : 'text-gray-200 hover:text-white'
                   }`}
                 >
@@ -143,14 +149,6 @@ export default function Nav() {
                 </Link>
               </motion.div>
             ))}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.8 } }}
-              exit={{ opacity: 0, y: 10, transition: { duration: 0.2 } }}
-              className="pt-10 text-sm text-gray-400"
-            >
-       
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
