@@ -127,6 +127,7 @@ export default function Nav() {
               />
             </motion.div>
 
+            {/* Mobile Navigation Links */}
             {links.map((link, i) => (
               <motion.div
                 key={link.name}

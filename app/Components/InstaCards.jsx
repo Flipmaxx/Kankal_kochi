@@ -1,68 +1,168 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 
-export default function KochiMedia() {
-  const reels = [
+export default function InstagramReels() {
+  const shorts = [
     {
       id: 1,
-      embedUrl: "https://www.instagram.com/reel/DQZKxGIkulA/embed",
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://youtube.com/shorts/EREaRi7G06I?si=OHhNTeZ2Fz4uo7SW",
+      thumbnail: "/Images/LG2.png",
     },
     {
       id: 2,
-      embedUrl: "https://www.instagram.com/reel/DQmDobyEiPg/embed",
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://youtube.com/shorts/fBt9ngxWO6E?si=9T8AUUPPqAVj_SFk",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 3,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/XyCSnzGTAcw?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 4,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/afbQfWKrMJY?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 5,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/JGN7vtcYE6Y?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 6,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/MoG9hD_Dfgc?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 7,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/Ta_RlUJRSHI?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+    {
+      id: 8,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/oyZdVvqyers?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+       {
+      id: 9,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/CjdDkvMECkE?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+           {
+      id: 10,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/B1-KYwI23Qw?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+           {
+      id: 11,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/gn31sxr1LoY?feature=share",
+      thumbnail: "/Images/LG2.png",
+    },
+           {
+      id: 12,
+      title: "Kankalkochi",
+      user: "Kankalkochi",
+      link: "https://www.youtube.com/shorts/8sLNsnFkbbw?feature=share",
+      thumbnail: "/Images/LG2.png",
     },
   ];
 
-  return (
-    <section className="relative bg-black text-white py-16 px-6 md:px-12 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/Images/BG3.png')] bg-cover bg-center opacity-60" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90" />
+  const getYouTubeID = (url) => {
+    const parts = url.split("/shorts/");
+    return parts[1]?.split("?")[0];
+  };
 
-      <div className="relative z-10 container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between md:items-center mb-10">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-              Exclusive from Kankal Kochi Media
-            </h2>
-            <p className="text-sm md:text-base text-gray-300 max-w-2xl">
-              Bringing you untold stories, vibrant events, and real voices that define the true spirit of Kochi.
-            </p>
-          </div>
-          <button className="mt-6 md:mt-0 border border-gray-400 hover:bg-white hover:text-black transition-all text-sm px-6 py-2 rounded">
-            View All
-          </button>
+  return (
+    <div
+      className="w-full bg-[#020202] bg-cover bg-center px-6 py-16"
+      style={{ backgroundImage: "url('/Images/space-bg.png')" }}
+    >
+      {/* HEADER */}
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between mb-8">
+        <div>
+          <h2 className="text-white text-xl md:text-4xl font-bold">
+            Exclusive YouTube Shorts
+          </h2>
+          <p className="text-gray-300 mt-2 max-w-2xl text-sm">
+            Curated video shorts from Kanakal creators.
+          </p>
         </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ staggerChildren: 0.15 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {reels.map((reel) => (
-            <motion.div
-              key={reel.id}
-              className="rounded-xl overflow-hidden shadow-lg bg-black/40 backdrop-blur-sm border border-gray-800 hover:border-[#00b7ff] transition-all"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="aspect-[11/12] w-full">
-                <iframe
-                  src={reel.embedUrl}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <a href="https://www.youtube.com/@kankalkochi" target="_blank">
+          <button className="text-white border mt-2 border-gray-500 px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
+            View All
+          </button>
+        </a>
       </div>
-    </section>
+
+      {/* GRID */}
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {shorts.map((short) => {
+          const id = getYouTubeID(short.link);
+
+          const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&loop=1&controls=0&playlist=${id}`;
+
+          return (
+            <div
+              key={short.id}
+              className="group relative rounded-xl overflow-hidden shadow-lg bg-black cursor-pointer"
+              onClick={() => window.open(short.link, "_blank")}
+            >
+              {/* AUTOPLAY PREVIEW */}
+              <iframe
+                src={embedUrl}
+                className="w-full h-100 xl:h-130 pointer-events-none"
+                allow="autoplay; encrypted-media"
+              ></iframe>
+
+              {/* CLICK OVERLAY */}
+              <div className="absolute inset-0 z-30"></div>
+
+              {/* GRADIENT OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+
+              {/* BOTTOM INFO */}
+              <div className="absolute bottom-4 left-4 right-4 text-white z-20">
+                <p className="text-sm mb-3">{short.title}</p>
+
+                <div className="flex items-center gap-2">
+                  <Image
+                    src={short.thumbnail}
+                    alt="profile"
+                    width={32}
+                    height={32}
+                    className="rounded-full bg-cover"
+                  />
+                  <span className="text-sm">@{short.user}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

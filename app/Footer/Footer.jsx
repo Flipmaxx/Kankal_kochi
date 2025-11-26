@@ -88,7 +88,7 @@ export default function Footer() {
             Manglassery Tower, Elcor Rd, opposite Ganapathy Temple,
             North Kalamassery, Kalamassery, Kochi, Kerala 683104
           </p>
-          <p className="text-sm text-gray-400 mb-2">+91 9999 999 999</p>
+          <p className="text-sm text-gray-400 mb-2">+91 </p>
           <p className="text-sm text-gray-400">kankalmedia@gmail.com</p>
         </div>
 
@@ -102,16 +102,18 @@ export default function Footer() {
             placeholder="Enter email"
             className="w-full px-4 py-2 mb-3 rounded-md bg-transparent border border-gray-600 text-sm placeholder-gray-500 focus:outline-none focus:border-violet-500"
           />
-          <button
-            className="
-              w-full py-2 rounded-md font-semibold
-              bg-gradient-to-r from-cyan-400 to-violet-500
-              hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]
-              transition-all duration-300
-            "
-          >
-            View All
-          </button>
+       <button
+  className="
+    w-full py-2 rounded-md font-semibold
+    bg-gradient-to-r from-violet-500 to-violet-700
+    hover:shadow-[0_0_20px_rgba(139,92,246,0.6)]
+    transition-all duration-300
+    text-white
+  "
+>
+  View All
+</button>
+
         </div>
       </div>
 

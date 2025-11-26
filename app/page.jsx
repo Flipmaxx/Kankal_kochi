@@ -3,6 +3,7 @@
 import BottomSection from "./Components/BottomSection"
 import Cards from "./Components/Cards"
 import ImageSection from "./Components/ImageSection"
+import InstagramReels from "./Components/InstaCards"
 import AutoScrollPosters from "./Components/Landing"
 import Scroll from "./Components/Scroll"
 import Videoo from "./Components/video"
@@ -27,7 +28,7 @@ export default function Home(){
         </section>
 
          <section className="bg-black h-full overflow-hidden z-30 relative">
-       <ImageSection/>
+   <InstagramReels/>
         </section>
 
          <section className="bg-black h-full overflow-hidden z-30 relative">

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ImageSection from "./ImageSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,13 +122,14 @@ export default function Scroll() {
     <div ref={containerRef} className="w-full h-screen bg-yellow-600 relative overflow-hidden">
       {/* Background Video */}
       <video
-        src="./Videos/S.mp4"
-        className="fixed top-0 left-0 w-full h-full object-cover z-0"
+        src="./Videos/VED.mp4"
+        className="fixed top-0 left-0 w-full h-full object-cover z-0 "
         autoPlay
         muted
         loop
         playsInline
       />
+       <div className="bg-violet-500 w-full absolute inset-0 opacity-30"></div>
 
       {/* Scroll Spacer - Reduced height */}
       <div ref={spacerRef} className="h-[200vh] bg-transparent" />
@@ -142,7 +144,7 @@ export default function Scroll() {
             ref={zoomTextRef}
             className="text-6xl md:text-8xl lg:text-9xl font-bold text-white"
           >
-            ZOOM
+            {/* ZOOM */}
           </h1>
           
           <h1
@@ -150,7 +152,7 @@ export default function Scroll() {
             className="text-6xl md:text-8xl lg:text-9xl font-bold text-white inline-block origin-center"
             style={{ transformOrigin: "center" }}
           >
-            INT
+            EXPL
             <span
               ref={oLetterRef}
               className="inline-block origin-center"
@@ -158,14 +160,10 @@ export default function Scroll() {
             >
               O
             </span>
+            RE
           </h1>
           
-          <h1
-            ref={extraOrdinaryRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
-          >
-            THE EXTRA ORDINARY
-          </h1>
+       
         </div>
       </div>
 
@@ -174,26 +172,7 @@ export default function Scroll() {
         ref={finalSectionRef}
         className="fixed top-0 left-0 w-full h-full bg-black z-50 opacity-0 pointer-events-none hidden flex-col items-center justify-center px-4 space-y-6"
       >
-        <div className="final-content text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Welcome to Our World
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-2xl">
-            Where extraordinary experiences begin
-          </p>
-        </div>
-
-        <div className="final-content w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="https://videos.pexels.com/video-files/6611947/6611947-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-          </video>
-        </div>
+       <ImageSection/>
       </div>
     </div>
   );
